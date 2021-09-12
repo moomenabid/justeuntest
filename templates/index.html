@@ -1,0 +1,49 @@
+  
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Covid19 Illness</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Patient age quantile" placeholder="Patient age quantile" required="required" />
+        <input type="text" name="Hematocrit" placeholder="Hematocrit" required="required" />
+		<input type="text" name="Hemoglobin" placeholder="Hemoglobin" required="required" />
+		<input type="text" name="Platelets" placeholder="Platelets" required="required" />
+		<input type="text" name="Mean platelet volume" placeholder="Mean platelet volume" required="required" />
+		<input type="text" name="Red blood Cells" placeholder="Red blood Cells" required="required" />
+		<input type="text" name="Lymphocytes" placeholder="Lymphocytes" required="required" />
+		<input type="text" name="Mean corpuscular hemoglobin concentration (MCHC)" placeholder="Mean corpuscular hemoglobin concentration (MCHC)" required="required" />
+		<input type="text" name="Leukocytes" placeholder="Leukocytes" required="required" />
+		<input type="text" name="Basophils" placeholder="Basophils" required="required" />
+		<input type="text" name="Mean corpuscular hemoglobin (MCH)" placeholder="Mean corpuscular hemoglobin (MCH)" required="required" />
+		<input type="text" name="Eosinophils" placeholder="Eosinophils" required="required" />
+		<input type="text" name="Mean corpuscular volume (MCV)" placeholder="Mean corpuscular volume (MCV)" required="required" />
+		<input type="text" name="Monocytes" placeholder="Monocytes" required="required" />
+		<input type="text" name="Red blood cell distribution width (RDW)" placeholder="Red blood cell distribution width (RDW)" required="required" />
+		<input type="text" name="est malade" placeholder="est malade" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
